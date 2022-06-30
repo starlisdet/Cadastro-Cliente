@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Usuario</title>
+</head>
+<body>
+    <h1>Edição de Usuário</h1>
+    <form action="/client/cadastro/save" method="POST">
+        <label>Id:</label>
+        <input type="text" name="id" value="<%= usuario.id %>"><br>
+        <label>Nome:</label>
+        <input type="text" name="nome" value="<%= usuario.nome %>"><br>
+        <label>Idade:</label>
+        <input type="number" name="idade" value="<%= usuario.idade %>"><br>
+        <label>CPF:</label>
+        <input type="text" name="cpf" value="<%= usuario.cpf %>"><br>
+        <label>Endereço:</label>
+        <input type="text" name="endereco" value="<%= usuario.endereco %>"><br>
+        <input type="submit" value="cadastro">
+      </form>
+    <% if(mensagem) { %>
+      <p>
+        <label style="color: red"><%= mensagem %></label>
+      </p>
+    <% } %>
+</body>
+</html>

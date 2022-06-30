@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+        .container {
+            width: 60vh;
+            height: 60vh;
+            border-radius: 15px;
+            background-color: aqua;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Clientes</h1>
+        <h2><%= mensagem %></h2>
+        <ul>
+            <% docs.forEach(usuario => { %>
+            <li>
+                <%= usuario.nome %>
+                <input type="button" onclick="location.href='client/delete/<%= usuario.id %>'" value="delete" />
+                <input type="button" onclick="location.href='client/edit/<%= usuario.id %>'" value="editar" />
+            </li>
+            <% }) %>
+        </ul>
+        <br>
+        <br>
+        <input type="button" onclick="location.href='/client/cadastro'" value="Novo usuário" />
+    </div>
+
+</body>
+
+</html>
